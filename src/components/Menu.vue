@@ -1,10 +1,10 @@
 <template>
   <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                    <router-link>Gallery</router-link>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Link</a>
+                    <router-link class="nav-link" to="/about">About</router-link>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="https://www.instagram.com/nairazak.art/" target="_blank"><img src="../assets/instagram.svg" alt="Instagram logo"></a>
@@ -24,6 +24,14 @@ export default {
 <style lang="scss" scoped>
     .nav-link {
         padding: 2px 2px 2px 2px;
-        color:black!important
+        color:black!important;
+        @media (prefers-color-scheme: dark) {
+            color: black!important
+        }
+        img {
+             @media (prefers-color-scheme: dark) {
+            color: black!important
+        }
+        }
     }
 </style>

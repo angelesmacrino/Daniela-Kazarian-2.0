@@ -69,7 +69,8 @@ $mobile-width: 600px;
         }
         .navbar-brand {
             font-family: "Yeon Sung", cursive;
-            font-size:3.80rem ;
+            font-size:3.80rem;
+            padding-left:5px;
             @include s-mobile {
                 font-size:2.9rem ;
             }
@@ -117,7 +118,12 @@ $mobile-width: 600px;
 }
 .mobileMenu-leave-active {
     transition: all 1s 
+}
 
+@media (prefers-color-scheme: dark) {
+    .navbar-brand {
+      color:black!important;
+    }
 }
 </style>
 
