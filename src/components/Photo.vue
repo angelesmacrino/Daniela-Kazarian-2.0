@@ -1,28 +1,37 @@
 <template>
-  <div class="gallery m-5">
-    <div class="gallery-panel" v-for="photo in art" :key="photo.id">
-      <transition appear name="fade">
-        <router-link :to="`/photo/${photo.id}`">
-          <img :src="thumbUrl(photo.filename)">
-        </router-link>
-      </transition>
-    </div>
-  </div>
+<div class="lightbox" @click.self="closeLightbox">    
+  <img :src="photoUrl(photo.filename)">    
+    <div class="lightbox-info">
+        <div class="lightbox-info-inner">
+            {{photo.title}}
+        </div>
+    </div>  
+</div>
 </template>
 
 <script>
 import art from '@/art.json';
 export default {
-  name: 'Gallery',
+  name: 'Photo',
   data() {
     return {
       art,
     };
   },
+  computed: {
+    photo() {
+      return this.art.find((photo) => {
+        return photo.id === Number(this.$route.params.id);
+      });
+    },
+  },
   methods: {
-    thumbUrl(filename) {
+    photoUrl(filename) {
       return require(`../assets/images/${filename}`);
     },
+    closeLightbox() {
+      this.$router.push('/gallery');
+    }
   },
 };
 </script>
@@ -65,45 +74,49 @@ $small-mobile-width: 320px;
       @content;
     }
   }
-
-
-.gallery {
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(90, 90, 90, 0.8);
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 1rem;
     @include s-mobile {
-      grid-template-columns: repeat(2,1fr)
+      display:block;
     }
     @include mobile {
-      grid-template-columns: repeat(2,1fr)
+      display:block;
     }
     @include s-tablet {
-      grid-template-columns: repeat(2,1fr)
-    }      
-    .gallery-panel img {
+      display:block;
+    }
+    img {
+    margin: auto;
     width: 100%;
-    height: 22vw;
-    object-fit: cover;
-    border-radius: 0.25rem;
+    grid-column-start: 2;
     @include mobile {
-      height:100%
+      margin: 3rem;
+      width:85%
     }
     @include s-mobile {
-      height:100%
+      margin: 3rem;
+      width:85%
     }
     @include s-tablet {
-      height:100%
+      margin: 3rem;
+      width:85%
     }
   }
+  .lightbox-info {
+    margin: auto 2rem auto 0;
+    .lightbox-info-inner {
+    background-color: #FFFFFF;
+    display: inline-block;
+    padding: 2rem;
   }
-  .fade-enter-from {
-opacity: 0;
-}
-.fade-enter-to {
-opacity:1
-}
-
-.fade-enter-active {
-transition: all 2s ease
-}
+  }
+  }
 </style>
