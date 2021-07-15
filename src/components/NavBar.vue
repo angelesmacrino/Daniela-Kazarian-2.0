@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-sm navbar-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Daniela Kazariann</a>
+        <a class="navbar-brand" href="#">Daniela Kazarian</a>
         <button @click="toggleNavBar" class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" :aria-expanded="toggledNavBar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
