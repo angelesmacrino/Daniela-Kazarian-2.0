@@ -1,35 +1,39 @@
 <template>
-  <div class="d-flex flex-row justify-content-center align-items-top m-5">
-    <figure class="image d-flex flex-column align-items-center">
-      <transition appear name = "fade">
-        <img class="p-0 rounded" src="../assets/images/Incarna.jpg" alt="Daniela Kazarian fictonalized persona, alien-like creature" />
-      </transition>
-      <blockquote class="text-start">
-        <p>
-          <i>
-            <strong>"Some people say my work is often depressing and pessimistic,
-            with the emphasis on death, blood, overcrowding, 
-            strange beings and so on, but I don't really think it is."</strong>
-          </i>  
-        </p>
-      </blockquote>
-      <figcaption>
-        <p>
-          &mdash; H.R. Giger
-        </p>
-      </figcaption>
-    </figure>
-  <p class="about text-start align-self-center">
-      Inspired in the works of H.R. Giger, 
-      White Wolf's <cite>World of Darkness</cite> and David Cronenberg films.
-      Her main themes are dark mutations, transformations and twisted creatures. 
-    <br>
-    <br>  
-      Daniela Kazarian lives with her two cats, dog and parrot in Buenos Aires,
-      Argentina. She is a web developer and artist,
-      and in her free time she loves playing video and tabletop games.
-  </p>
- </div>
+ <transition appear name = "fade">
+  <div class="row m-5">
+      <div class="col-sm-7">
+        <p class="about text-start">
+            Inspired in the works of H.R. Giger, 
+            White Wolf's <cite>World of Darkness</cite> and David Cronenberg films.
+            Her main themes are dark mutations, transformations and twisted creatures. 
+          <br>
+          <br>  
+            Daniela Kazarian lives with her two cats, dog and parrot in Buenos Aires,
+            Argentina. She is a web developer and artist,
+            and in her free time she loves playing video and tabletop games.
+        </p>        
+      </div>
+      <div class="col-sm-5">
+      <figure class="image d-flex flex-column align-items-center">
+          <img class="img-fluid" src="../assets/images/Incarna.jpg" alt="Daniela Kazarian fictonalized persona, alien-like creature" />
+        <blockquote class="text-start">
+          <p>
+            <i>
+              <strong>"Some people say my work is often depressing and pessimistic,
+              with the emphasis on death, blood, overcrowding, 
+              strange beings and so on, but I don't really think it is."</strong>
+            </i>  
+          </p>
+        </blockquote>
+        <figcaption>
+          <p>
+            &mdash; H.R. Giger
+          </p>
+        </figcaption>
+      </figure>
+    </div>
+    </div>
+  </transition>
 </template>
 
 <style scoped lang="scss">
