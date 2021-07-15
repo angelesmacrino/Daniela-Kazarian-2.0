@@ -70,28 +70,59 @@
       @content;
     }
   }
-
   p {
     font-size: 2.5rem;
     font-family: 'Stylish', sans-serif;
+     @include mobile{
+      font-size:2rem
+    }
   }
-
   .about {
-    margin-top:-150px;
-    margin-right:50px
+    margin-left:150px;
+    margin-top:100px;
+      @include mobile {
+        margin-left:0px;
+        margin-top:0px
+      }
+      @include s-mobile {
+      margin-left:0px;
+      margin-top:0px
+      }
+      @include s-tablet {
+      margin-left:0px;
+      margin-top:0px
+      }
+      @include l-tablet {
+      margin-left:0px;
+      margin-top:0px
+      }
   }
-
   img {
     width:60%;
+      @include mobile {
+        width:90%;
+        margin-top:3rem;
+      }
+      @include s-mobile {
+        width:90%;
+        margin-top:3rem;
+      }
+      @include s-tablet {
+        width:50%;
+      }
   }
-
   blockquote {
     width:60%;
+    @include mobile {
+        width:90%;
+      }
+    @include s-mobile {
+        width:90%;
+      }
     p {
       font-size: 2rem
     }
   }
-
   .fade-enter-from {
     opacity: 0;
   }
